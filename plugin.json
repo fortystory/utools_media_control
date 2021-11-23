@@ -1,0 +1,86 @@
+{
+    "logo": "icons/duomeitikongjianMultimediaControls13.png",
+    "platform": ["win32"],
+    "preload": "preload.js",
+    "features": [
+        {
+            "code": "next",
+            "explain": "下一曲",
+            "icon": "icons/duomeitikongjianMultimediaControls11.png",
+            "platform": ["win32"],
+            "cmds": [
+                "下一曲",
+                "next song"
+            ]
+        },
+        {
+            "code": "previous",
+            "explain": "上一曲",
+            "icon": "icons/duomeitikongjianMultimediaControls12.png",
+            "platform": ["win32"],
+            "cmds": [
+                "上一曲",
+                "previous song"
+            ]
+        },
+        {
+            "code": "pause",
+            "explain": "暂停/播放",
+            "icon": "icons/duomeitikongjianMultimediaControls14.png",
+            "platform": ["win32"],
+            "cmds": [
+                "暂停/播放",
+                "暂停",
+                "播放",
+                "pause",
+                "play"
+            ]
+        },
+        {
+            "code": "mute",
+            "explain": "静音/恢复",
+            "icon": "icons/Soundshengyin7.png",
+            "platform": ["win32"],
+            "cmds": [
+                "静音/恢复",
+                "mute"
+            ]
+        },
+        {
+            "code": "volumeup",
+            "explain": "音量增大",
+            "icon": "icons/Soundshengyin5.png",
+            "platform": ["win32"],
+            "cmds": [
+                "音量增大",
+                "音量加",
+                "音量+",
+                "volume up"
+            ]
+        },
+        {
+            "code": "volumedown",
+            "explain": "音量减小",
+            "icon": "icons/Soundshengyin6.png",
+            "platform": ["win32"],
+            "cmds": [
+                "音量减小",
+                "音量-",
+                "volume down"
+            ]
+        },
+        {
+            "code": "sound",
+            "explain": "声音调整",
+            "icon": "icons/Soundshengyin1.png",
+            "platform": ["win32"],
+            "cmds": [
+                "声音调整",
+                "sound"
+            ]
+        }
+    ],
+    "pluginSetting": {
+        "single": false
+    }
+}

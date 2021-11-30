@@ -2,8 +2,7 @@
     "logo": "icons/duomeitikongjianMultimediaControls13.png",
     "platform": ["win32"],
     "preload": "preload.js",
-    "features": [
-        {
+    "features": [{
             "code": "next",
             "explain": "下一曲",
             "icon": "icons/duomeitikongjianMultimediaControls11.png",
@@ -65,6 +64,7 @@
             "platform": ["win32"],
             "cmds": [
                 "音量减小",
+                "音量减",
                 "音量-",
                 "volume down"
             ]
@@ -75,7 +75,7 @@
             "icon": "icons/Soundshengyin1.png",
             "platform": ["win32"],
             "cmds": [
-                "声音调整",
+                "音量调整",
                 "sound"
             ]
         }

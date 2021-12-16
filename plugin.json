@@ -1,11 +1,11 @@
 {
-    "logo": "icons/duomeitikongjianMultimediaControls13.png",
+    "logo": "icons/bofang.png",
     "platform": ["win32"],
     "preload": "preload.js",
     "features": [{
             "code": "next",
             "explain": "下一曲",
-            "icon": "icons/duomeitikongjianMultimediaControls11.png",
+            "icon": "icons/xiayiqu.png",
             "platform": ["win32"],
             "cmds": [
                 "下一曲",
@@ -15,7 +15,7 @@
         {
             "code": "previous",
             "explain": "上一曲",
-            "icon": "icons/duomeitikongjianMultimediaControls12.png",
+            "icon": "icons/shangyiqu.png",
             "platform": ["win32"],
             "cmds": [
                 "上一曲",
@@ -25,10 +25,9 @@
         {
             "code": "pause",
             "explain": "暂停/播放",
-            "icon": "icons/duomeitikongjianMultimediaControls14.png",
+            "icon": "icons/bofangzanting.png",
             "platform": ["win32"],
             "cmds": [
-                "暂停/播放",
                 "暂停",
                 "播放",
                 "pause",
@@ -37,18 +36,19 @@
         },
         {
             "code": "mute",
-            "explain": "静音/恢复",
-            "icon": "icons/Soundshengyin7.png",
+            "explain": "静音/取消静音",
+            "icon": "icons/shengjingyin.png",
             "platform": ["win32"],
             "cmds": [
-                "静音/恢复",
+                "取消静音",
+                "静音",
                 "mute"
             ]
         },
         {
             "code": "volumeup",
             "explain": "音量增大",
-            "icon": "icons/Soundshengyin5.png",
+            "icon": "icons/shengda.png",
             "platform": ["win32"],
             "cmds": [
                 "音量增大",
@@ -60,23 +60,13 @@
         {
             "code": "volumedown",
             "explain": "音量减小",
-            "icon": "icons/Soundshengyin6.png",
+            "icon": "icons/shengxiao.png",
             "platform": ["win32"],
             "cmds": [
                 "音量减小",
                 "音量减",
                 "音量-",
                 "volume down"
-            ]
-        },
-        {
-            "code": "sound",
-            "explain": "声音调整",
-            "icon": "icons/Soundshengyin1.png",
-            "platform": ["win32"],
-            "cmds": [
-                "音量调整",
-                "sound"
             ]
         }
     ],

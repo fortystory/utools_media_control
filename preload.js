@@ -1,5 +1,4 @@
 const cp = require('child_process') //调用系统命令 cp.exec('notepad');
-    // const loudness = require('loudness')
 
 
 window.exports = {
@@ -69,70 +68,48 @@ window.exports = {
             }
         }
     },
+    "sound": {
+        mode: 'list',
+        args: {
+            // 进入插件时调用（可选）
+            enter: (action, callbackSetList) => {
+                // 如果进入插件就要显示列表数据
+                callbackSetList([{
+                    title: '调整音量',
+                    description: '输入数字,调整音量 0-100',
+                    icon: 'icons/quxiaojingyin.png' // 图标(可选)
+                }])
+            },
+            // 子输入框内容变化时被调用 可选 (未设置则无搜索)
+            search: (action, searchWord, callbackSetList) => {
+                // 获取一些数据
+                // 执行 callbackSetList 显示出来
+                callbackSetList([{
+                    title: '调整音量',
+                    description: '调整为:' + searchWord,
+                    sound_val: searchWord,
+                    icon: 'icons/quxiaojingyin.png', // 图标
+                }])
+            },
+            // 用户选择列表中某个条目时被调用
+            select: (action, itemData, callbackSetList) => {
+                window.utools.hideMainWindow();
 
-    // plugin.json 中添加
-    // {
-    //     "code": "sound",
-    //     "explain": "声音调整",
-    //     "icon": "icons/Soundshengyin1.png",
-    //     "platform": ["win32"],
-    //     "cmds": [
-    //         "音量调整",
-    //         "sound"
-    //     ]
-    // }
+                utools.simulateKeyboardTap("VolumeUp");
 
-    // "sound": {
-    //     mode: 'list',
-    //     args: {
-    //         // 进入插件时调用（可选）
-    //         enter: (action, callbackSetList) => {
-    //             // 如果进入插件就要显示列表数据
-    //             callbackSetList([{
-    //                 title: '调整音量',
-    //                 description: '输入数字,调整音量 0-100',
-    //                 icon: 'icons/Soundshengyin4.png' // 图标(可选)
-    //             }])
-    //         },
-    //         // 子输入框内容变化时被调用 可选 (未设置则无搜索)
-    //         search: (action, searchWord, callbackSetList) => {
-    //             // 获取一些数据
-    //             // 执行 callbackSetList 显示出来
-    //             callbackSetList([{
-    //                 title: '调整音量',
-    //                 description: '调整为:' + searchWord,
-    //                 sound_val: searchWord,
-    //                 icon: 'icons/Soundshengyin4.png', // 图标
-    //                 // url: 'https://yuanliao.info'
-    //             }])
-    //         },
-    //         // 用户选择列表中某个条目时被调用
-    //         select: (action, itemData, callbackSetList) => {
-    //             window.utools.hideMainWindow();
-    //             // let vol = await loudness.getVolume();
-    //             let vol = loudness.getVolume();
-    //             console.log(vol);
+                let sound_val = itemData.sound_val
+                if (sound_val > 100) {
+                    sound_val = 100;
+                }
+                if (sound_val < 0) {
+                    sound_val = 0;
+                }
 
-    //             utools.simulateKeyboardTap("VolumeUp");
-
-    //             let sound_val = itemData.sound_val
-    //             if (sound_val > 100) {
-    //                 sound_val = 100;
-    //             }
-    //             if (sound_val < 0) {
-    //                 sound_val = 0;
-    //             }
-
-    //             if (itemData.sound_val == 0) {
-    //                 // utools.simulateKeyboardTap("VolumeMute");
-    //                 cp.exec(loudness.setMuted(true));
-    //             } else {
-    //                 cp.exec(loudness.setVolume(sound_val));
-    //             }
-    //             window.utools.outPlugin();
-    //         },
-    //         // 子输入框为空时的占位符，默认为字符串"搜索"
-    //         placeholder: "输入音量数值 0-100"
-    //     }
-    // }
+                cp.exec("start quicker:runaction:9cc8fa56-775f-4a68-b36f-bc46f8c1c249?" + sound_val);
+                // window.utools.outPlugin();
+            },
+            // 子输入框为空时的占位符，默认为字符串"搜索"
+            placeholder: "输入音量数值 0-100"
+        }
+    }
 }
